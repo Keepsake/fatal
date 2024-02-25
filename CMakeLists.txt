@@ -4,11 +4,13 @@ project(KsFatal LANGUAGES CXX)
 
 find_package(KsCMakeHelpers CONFIG REQUIRED)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 ks_setup()
 
 add_subdirectory(src)
 
 if(BUILD_TESTING)
-  find_package(GTest CONFIG REQUIRED)
   add_subdirectory(tests)
 endif()

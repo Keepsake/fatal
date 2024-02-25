@@ -1,11 +1,8 @@
-name: main
+name: OSX
 on: push
 jobs:
   BuildAndTest:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-latest
     steps:
       - name: Checkoout
         uses: actions/checkout@v4
@@ -19,4 +16,4 @@ jobs:
       - name: Build and test
         uses: lukka/run-cmake@v10
         with:
-          workflowPreset: 'ci'
+          workflowPreset: 'default'
