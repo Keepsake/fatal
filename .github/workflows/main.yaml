@@ -1,0 +1,22 @@
+name: main
+on: push
+jobs:
+  BuildAndTest:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkoout
+        uses: actions/checkout@v4
+
+      - name: Install CMake
+        uses: lukka/get-cmake@latest
+
+      - name: Setup VCPKG
+        uses: lukka/run-vcpkg@v11.5
+
+      - name: Build and test
+        uses: lukka/run-cmake@v10
+        with:
+          workflowPreset: 'ci'

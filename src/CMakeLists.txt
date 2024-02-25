@@ -24,7 +24,7 @@ target_sources(
 target_compile_features(
   ks-fatal
   PUBLIC
-    cxx_std_11
+    cxx_std_17
 )
 
 ks_install(

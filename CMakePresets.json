@@ -13,7 +13,7 @@
       "generator": "Ninja",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_CXX_FLAGS_INIT": "--coverage -fsanitize=address"
+        "CMAKE_CXX_FLAGS_INIT": "-fsanitize=address"
       }
     }
   ],
@@ -34,12 +34,7 @@
       "name": "ci",
       "displayName": "CI",
       "configuration": "Debug",
-      "configurePreset": "ci",
-      "targets": [
-        "all",
-        "test",
-        "ExperimentalCoverage"
-      ]
+      "configurePreset": "ci"
     }
   ],
   "testPresets": [
@@ -58,8 +53,15 @@
       "output": {
         "outputOnFailure": true
       }
+    },
+    {
+      "name": "ci",
+      "configurePreset": "ci",
+      "configuration": "Debug",
+      "output": {
+        "outputOnFailure": true
+      }
     }
-
   ],
   "workflowPresets": [
     {
@@ -105,6 +107,10 @@
         },
         {
           "type": "build",
+          "name": "ci"
+        },
+        {
+          "type": "test",
           "name": "ci"
         }
       ]
