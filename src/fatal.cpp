@@ -7,7 +7,7 @@ namespace ks::fatal {
 void
 panic() noexcept
 {
-  if (std::getenv("SFT_ABORT_ON_PANIC") != nullptr)
+  if (std::getenv("KS_ABORT_ON_PANIC") != nullptr)
     std::abort();
 
   std::exit(EXIT_FAILURE);

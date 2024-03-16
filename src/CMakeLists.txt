@@ -1,4 +1,4 @@
-add_library(ks-fatal 
+add_library(ks-fatal STATIC
   fatal.cpp
 )
 
