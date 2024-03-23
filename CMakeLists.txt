@@ -10,6 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ks_setup()
 
 add_subdirectory(src)
+add_subdirectory(include)
 
 if(BUILD_TESTING)
   add_subdirectory(tests)
