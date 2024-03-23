@@ -4,7 +4,7 @@
 
 namespace ks::fatal {
 
-KS_FATAL_EXPORT [[noreturn]] void
+[[noreturn]] void KS_FATAL_EXPORT
 panic() noexcept;
 
 } // namespace ks::fatal
