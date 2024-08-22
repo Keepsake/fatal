@@ -4,5 +4,5 @@
 
 TEST(PanicTest, CanPanic)
 {
-  ASSERT_DEATH(ks::fatal::panic(), "");
+  ASSERT_DEATH(ks::fatal::panic("panic message"), "fatal.+panic message");
 }

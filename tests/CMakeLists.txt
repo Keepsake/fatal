@@ -1,18 +1,21 @@
-find_package(GTest CONFIG REQUIRED)
-include(GoogleTest)
+# SPDX-License-Identifier: MIT
 
-add_executable(test-panic
-  test_panic.cpp
-)
+if(KS_FATAL_BUILD_TEST)
+  add_executable(ks-fatal-unit-tests
+    test_panic.cpp
+  )
 
-target_link_libraries(test-panic
-  PRIVATE
-    GTest::gtest_main ks-fatal
-)
+  target_link_libraries(ks-fatal-unit-tests
+    PRIVATE
+      GTest::gtest_main
+      ${PROJECT_NAME}::ks-fatal
+  )
 
-gtest_discover_tests(test-panic
-  DISCOVERY_MODE
-    PRE_TEST
-  XML_OUTPUT_DIR
-    reports
-)
+  include(GoogleTest)
+  gtest_discover_tests(ks-fatal-unit-tests
+    DISCOVERY_MODE
+      PRE_TEST
+    XML_OUTPUT_DIR
+      reports
+  )
+endif()

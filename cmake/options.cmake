@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: MIT
+
+option(KS_FATAL_BUILD_TEST "Build ${PROJECT_NAME} unittest" ${PROJECT_IS_TOP_LEVEL})
+option(KS_FATAL_INSTALL "Install ${PROJECT_NAME}" ${PROJECT_IS_TOP_LEVEL})
