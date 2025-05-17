@@ -25,7 +25,7 @@ if(KS_FATAL_INSTALL)
   install(
     TARGETS ks-fatal
     EXPORT ${PROJECT_NAME}Targets
-    FILE_SET headers
+    FILE_SET HEADERS
   )
 
   install(
