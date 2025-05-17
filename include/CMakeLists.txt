@@ -19,9 +19,9 @@ target_sources(
   PUBLIC
     FILE_SET HEADERS
       BASE_DIRS
-        ${CMAKE_CURRENT_SOURCE_DIR}
-        ${CMAKE_CURRENT_BINARY_DIR}
+        "${CMAKE_CURRENT_SOURCE_DIR}"
+        "${CMAKE_CURRENT_BINARY_DIR}"
       FILES
         ks/fatal.hpp
-        ${CMAKE_CURRENT_BINARY_DIR}/ks/fatal/detail/symbol_visibility.hpp
+        "${CMAKE_CURRENT_BINARY_DIR}/ks/fatal/detail/symbol_visibility.hpp"
 )
